@@ -69,7 +69,7 @@ Alur kerjanya untuk memisahkan sel yang menyentuh adalah sebagai berikut:
 
   * 1. Mencari Sure Background (Latar Belakang Pasti): Citra biner sel diperbesar sedikit menggunakan operasi morfologi Dilasi. Area terluar dari hasil dilasi ini dipastikan adalah background atau latar belakang yang sebenarnya.
 
-  * 2.Mencari Sure Foreground (Objek Pasti) dengan Distance Transform: Ini adalah kunci utama pemisahannya. Fungsi distance transform menghitung jarak setiap piksel di dalam sel menuju tepi sel terdekat. Bagian paling tengah (inti sel) akan memiliki nilai paling tinggi. Setelah di-threshold, kita akan mendapatkan titik-titik inti (marker) dari masing-masing sel yang sudah terpisah satu sama lain, meskipun bagian kulit luarnya saling menyentuh.
+  *  2. Mencari Sure Foreground (Objek Pasti) dengan Distance Transform: Ini adalah kunci utama pemisahannya. Fungsi distance transform menghitung jarak setiap piksel di dalam sel menuju tepi sel terdekat. Bagian paling tengah (inti sel) akan memiliki nilai paling tinggi. Setelah di-threshold, kita akan mendapatkan titik-titik inti (marker) dari masing-masing sel yang sudah terpisah satu sama lain, meskipun bagian kulit luarnya saling menyentuh.
 
   * 3. Menentukan Area Unknown (Area Abu-abu): Area sisa di antara sure background dan sure foreground diklasifikasikan sebagai area unknown (tidak pasti). Sistem belum tahu apakah area ini milik sel A, sel B, atau background.
 
